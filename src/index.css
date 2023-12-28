@@ -1,13 +1,242 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700;900&family=Roboto:wght@400;700;900&display=swap");
+
+@font-face {
+  font-family: 'Fntastic-B';
+  src: url(https://static1.squarespace.com/static/6329a85f62c0ad5bc365ffea/t/649d13584b1c676ab0ab50f1/1688015704330/Gilroy-Bold.otf)
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+  font-family: "Roboto", sans-serif;
+}
+
+body{
+  width: 100%;
+  text-align: center;
+}
+
+a {
+  text-decoration: none;
+}
+
+li {
+  list-style: none;
+}
+
+.not-allowed {
+  cursor: not-allowed !important;
+}
+
+.background__img--container {
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.15);
+}
+
+.background__img--container-two {
+  height: 100vh;
+  position: relative;
+}
+
+.background__img {
+  width: 100%;
+  z-index: -1;
+  object-fit: cover;
+  position: relative;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  background-size: contain;
+}
+
+.fixed-nav nav {
+  position: fixed;
+  width: 100%;
+  height: 100px;
+  background-color: rgba(255, 255, 255, 1); 
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 300ms;
+}
+
+.fixed-nav .nav__logo--img {
+  filter: none;
+}
+
+.fixed-nav .fa-bars {
+  color: black;
+  right: 0;
+  padding: 2vw;
+  transform: translate(0, 0);
+  top: auto;
+}
+
+.nav__container {
+  display: flex;
+  justify-content: center;
+  position: relative;
+}
+
+.nav__logo--img {
+  filter: invert(100%);
+  background-color: rgba(0, 0, 0, 0);
+  position: absolute;
+  max-width: 225px;
+  padding: 2vw;
+}
+
+.icon__container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.fa-bars {
+  color: white;
+  position: absolute;
+  right: 0;
+  top: 0;
+  transform: translate(-100%, 100%);
+  z-index: 10;
+  font-size: 38px;
+  cursor: pointer;
+}
+
+.menu__backdrop {
+  position: absolute;
+  background-color: white;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 1000;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  visibility: hidden;
+  transition: all 300ms ease;
+  opacity: 0;
+  transform: translate(100%);
+}
+
+.menu--open {
+  height: 100vh;
+  overflow: hidden;
+  background-color: white;
+}
+
+.menu--open .menu__backdrop {
+  display: flex;
+  opacity: 1;
+  transform: translate(0);
+  visibility: visible;
+}
+
+.menu__links {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.menu__list {
+  padding: 32px 0;
+}
+
+.menu__link {
+  color: black;
+  font-size: 40px;
+  cursor: pointer;
+  font-family: 'Fntastic-B',Helvetica,Arial,sans-serif;
+  transition: all 100ms;
+}
+
+.menu__link:hover {
+  border-bottom: 4px solid black;
+}
+
+.btn__menu--close {
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  padding: 8px;
+  color: black;
+  background: none;
+  border: none;
+  font-size: 48px;
+  cursor: pointer;
+}
+
+.content__container {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  bottom: 0;
+  width: 100%;
+  align-items: center;
+  margin-bottom: 40px;
+}
+
+.game__title {
+  color: white;
+  font-size: 44px;
+  font-family: 'Fntastic-B',Helvetica,Arial,sans-serif;
+}
+
+.btn__link {
+  color: white;
+  display: inline-block;
+  padding: 16px 40px;
+  transition: all 300ms;
+  width: 100%;
+}
+
+.game__btn {
+  background: transparent;
+  color: white;
+  border: 2px solid white;
+  font-size: 16px;
+  border-radius: 50px;
+  transition: all 300ms;
+  margin-top: 24px;
+  cursor: pointer;
+  position: relative;
+}
+
+.game__btn:hover {
+  background: white;
+}
+
+.btn__link:hover {
+  color: black;
+}
+
+
+/* 
+
+MEDIA QUERIES
+
+*/
+
+@media (max-width: 768px) {
+  .nav__logo--img {
+    margin-top: 24px;
+    top: 0;
+  }
+ 
+}
+@media (max-width: 480px) {
+  .nav__logo--img {
+    left: 0;
+    top: 8px;
+  }
+  .nav__container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+  }
+  
 }
