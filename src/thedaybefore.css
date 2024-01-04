@@ -17,6 +17,10 @@ li {
   list-style-type: none;
 }
 
+video:-webkit-full-screen {
+  border: none;
+}
+
 #home-page {
   background-color: rgba(0, 0, 0, 0.3);
   height: 130vh;
